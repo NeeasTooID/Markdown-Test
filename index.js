@@ -14,7 +14,7 @@ function markdownToHtml(markdown) {
 
 // Rute GET untuk mengubah Markdown menjadi HTML
 app.get('/markdown', (req, res) => {
-    const filePath = path.join(__dirname, 'index.md'); // Ganti 'index.md' dengan nama file Anda
+    const filePath = path.join(__dirname, 'README.md'); // Ganti 'index.md' dengan nama file Anda
     fs.readFile(filePath, 'utf8', (err, data) => {
         if (err) {
             res.status(500).send('Terjadi kesalahan saat membaca file');
