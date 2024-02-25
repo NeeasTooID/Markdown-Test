@@ -1,11 +1,18 @@
-// routes.js
 const express = require('express');
-const router = express.Router();
+const app = express();
 
 // Contoh route untuk index.html
-router.get('/', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
 
-// Ekspor router
-module.exports = router;
+// Contoh route lainnya
+app.get('/about', (req, res) => {
+  res.send('Ini adalah halaman "About"');
+});
+
+// Port server
+const port = 3000;
+app.listen(port, () => {
+  console.log(`Server berjalan di http://localhost:${port}`);
+});
